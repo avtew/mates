@@ -1,0 +1,119 @@
+.feed {
+  grid-area: feed;
+  padding: 10px;
+}
+
+.input {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+  gap: 20px;
+  width: 70%;
+  padding: 20px;
+  background: rgba(153, 102, 204, 0.075);
+}
+
+.content:before {
+	content: "";
+  position: absolute;
+  z-index: 0;
+  left: 57px;
+  top: 19px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 13px solid rgba(153, 102, 204, 0.075);
+  border-bottom: 12px solid transparent;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font: 0.875rem Commissioner;
+  border: 1px solid lightgrey;
+  outline: none;
+  resize: none;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid lightgrey;
+}
+
+.button {
+  width: 120px;
+  height: 40px;
+  font: 0.875rem Commissioner;
+  background: none;
+  border: 1px solid lightgrey;
+  cursor: pointer;
+}
+
+.name {
+  color: #9966cc;
+  font-variation-settings: "wght" 500;
+}
+
+.time {
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+
+.text {
+  margin: 0;
+  font: 0.875rem Commissioner;
+}
+
+.icon {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.likes {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  color: #9966CC;
+  border-top: 1px solid lightgrey;
+}
+
+.heart:before {
+  content: "\e922";
+}
+
+.likesQnt {
+  line-height: 150%;
+}

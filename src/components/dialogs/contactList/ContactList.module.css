@@ -1,0 +1,41 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-right: 10px;
+  border-right: 1px solid lightgrey;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  padding: 0 10px 10px 10px;
+  color: #9966cc;
+  font-size: 1rem;
+  font-variation-settings: "wght" 500;
+  border-bottom: 1px solid lightgrey;
+}
+
+.icon {
+  font-family: 'icomoon' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-right: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.chats:before {
+  content: "\e90d";
+}
+
+.contactsQnt {
+  font-variation-settings: "wght" 400;
+  opacity: 0.5;
+}

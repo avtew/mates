@@ -1,0 +1,81 @@
+.post {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  padding: 10px;
+  font: 1rem Commissioner;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+  gap: 10px;
+  width: 70%;
+  padding: 10px 20px 20px;
+  background: rgba(153, 102, 204, 0.075);
+}
+
+.content:before {
+	content: "";
+  position: absolute;
+  left: 57px;
+  top: 19px;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-right: 13px solid rgba(153, 102, 204, 0.075);
+  border-bottom: 12px solid transparent;
+}
+
+.name {
+  color: #9966cc;
+  font-variation-settings: "wght" 500;
+}
+
+.time {
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+
+.text {
+  margin: 0;
+  font: 0.875rem Commissioner;
+}
+
+.icon {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.likes {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  color: #9966CC;
+  border-top: 1px solid lightgrey;
+}
+
+.heart:before {
+  content: "\e922";
+}
+
+.likesQnt {
+  line-height: 150%;
+}

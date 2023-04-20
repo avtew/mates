@@ -1,0 +1,10 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  align-items: center;
+  width: 75%;
+  padding: 10px;
+  font-size: 0.85rem;
+  background: #ffffff;
+  box-shadow: 0 0 5px #d3d3d3;
+}

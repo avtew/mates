@@ -1,0 +1,49 @@
+.contact {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #F6F6F6;
+}
+
+.contact:hover {
+  cursor: pointer;
+  background: rgba(153, 102, 204, 0.25);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 2;
+}
+
+.name {
+  font-variation-settings: "wght" 500;
+}
+
+.message {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.text {
+  max-width: 75%;
+  margin: 0;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.time {
+  font-size: 0.75rem;
+  line-height: 150%;
+  opacity: 0.5;
+}

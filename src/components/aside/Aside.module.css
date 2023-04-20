@@ -1,0 +1,89 @@
+.aside {
+  grid-area: aside;
+  position: fixed;
+  top: 60px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 10px;
+  margin: 0;
+  font-variation-settings: "wght" 450;
+  list-style: none;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.item:hover {
+  background: rgba(153, 102, 204, 0.25);
+  cursor: pointer;
+}
+
+.item span {
+  color: #000000;
+}
+
+.item:hover .icon {
+  transform: scale(1.1);
+}
+
+.item a {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+.link {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 10px; 
+}
+
+.icon {
+  font-family: 'icomoon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.feed:before {
+  content: "\e933";
+}
+
+.dialogs:before {
+  content: "\e90a";
+}
+
+.friends:before {
+  content: "\e90d";
+}
+
+.profile:before {
+  content: "\e90c";
+}
+
+.photos:before {
+  content: "\e91a";
+}
+
+.music:before {
+  content: "\e936";
+}
+
+.settings:before {
+  content: "\e91b";
+}
