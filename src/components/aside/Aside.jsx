@@ -17,17 +17,26 @@ const Aside = (props) => {
           </li>
           <li className={classes.item}>
             <div className={classes.container}>
+              <NavLink className={classes.link} to='/friends'>
+                <span className={`${classes.icon} ${classes.friends}`}></span>
+                <span>Подписки</span>
+              </NavLink>
+            </div>
+          </li>
+          <li className={classes.item}>
+            <div className={classes.container}>
               <NavLink className={classes.link} to='/dialogs'>
                 <span className={`${classes.icon} ${classes.dialogs}`}></span>
                 <span>Сообщения</span>
               </NavLink>
             </div>
           </li>
+          <br></br>
           <li className={classes.item}>
             <div className={classes.container}>
-              <NavLink className={classes.link} to='/friends'>
-                <span className={`${classes.icon} ${classes.friends}`}></span>
-                <span>Друзья</span>
+              <NavLink className={classes.link} to='/users'>
+                <span className={`${classes.icon} ${classes.search}`}></span>
+                <span>Поиск мейтов</span>
               </NavLink>
             </div>
           </li>

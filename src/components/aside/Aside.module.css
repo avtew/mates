@@ -2,15 +2,20 @@
   grid-area: aside;
   position: fixed;
   top: 60px;
+  width: 200px;
+}
+
+.nav {
+  width: 100%;
 }
 
 .menu {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 5px;
   padding: 10px;
   margin: 0;
+  font-size: 0.875rem;
   font-variation-settings: "wght" 450;
   list-style: none;
 }
@@ -22,7 +27,7 @@
 }
 
 .item:hover {
-  background: rgba(153, 102, 204, 0.25);
+  background: #B3DE81;
   cursor: pointer;
 }
 
@@ -31,7 +36,7 @@
 }
 
 .item:hover .icon {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 .item a {
@@ -69,7 +74,11 @@
 }
 
 .friends:before {
-  content: "\e90d";
+  content: "\e92c";
+}
+
+.search:before {
+  content: "\e907";
 }
 
 .profile:before {

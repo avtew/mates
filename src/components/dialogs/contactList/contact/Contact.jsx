@@ -1,6 +1,6 @@
 import React from 'react';
-import classes from './Contact.module.css';
 import { NavLink } from 'react-router-dom';
+import classes from './Contact.module.css';
 
 const Contact = (props) => {
   let path = `/dialogs/${props.id}`;

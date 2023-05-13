@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('./fonts/icomoon.ttf');
+  src:  url('./assets/fonts/icomoon.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -8,19 +8,19 @@
 
 @font-face {
   font-family: 'GolosText';
-  src:  url('./fonts/GolosText.ttf');
+  src:  url('./assets/fonts/GolosText.ttf');
   font-weight: 400 700 900;
 }
 
 @font-face {
   font-family: 'Manrope';
-  src:  url('./fonts/Manrope.ttf');
+  src:  url('./assets/fonts/Manrope.ttf');
   font-weight: 400 500 700 900;
 }
 
 @font-face {
   font-family: 'Commissioner';
-  src:  url('./fonts/Commissioner.ttf');
+  src:  url('./assets/fonts/Commissioner.ttf');
 }
 
 * {

@@ -1,25 +1,26 @@
 import React from 'react';
-import classes from './Feed.module.css';
 import Post from './post/Post';
-import { addPostActionCreator, inputUpdatePostActionCreator } from '../../../redux/profileReduser';
+import classes from './Feed.module.css';
 
 const Feed = (props) => {
-  let feed = props.feed.map(post => <Post id={post.id} name={post.name} time={post.time} text={post.text} likesQnt={post.likesQnt} />);
+  let feed = props.feed.map(post => <Post id={post.id} time={post.time} text={post.text} likesQnt={post.likesQnt} />);
   let newPost = React.createRef();
 
   let inputUpdate = () => {
     let text = newPost.current.value;
-    props.dispatch(inputUpdatePostActionCreator(text));
+    props.inputUpdate(text);
   }
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
+    props.addPost();
   }
 
   return (
     <div className={classes.feed}>
       <div className={classes.input}>
-        <div className={classes.avatar}></div>
+        <div className={classes.avatar}>
+          
+        </div>
         <div className={classes.content}>
           <form className={classes.form}>
             <textarea className={classes.textarea} onChange={inputUpdate} value={props.newPostText} ref={newPost} />

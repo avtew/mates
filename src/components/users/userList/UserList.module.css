@@ -1,0 +1,29 @@
+.users {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0 10px 0 20px;
+  height: 100%;
+}
+
+.pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-self: center;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.number {
+  text-align: center;
+  cursor: pointer;
+}
+
+.number:hover {
+  color: #9966cc;
+}
+
+.selected {
+  color: #9966cc;
+}

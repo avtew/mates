@@ -63,8 +63,10 @@ export const addMessageActionCreator = () => {
 const dialogsReduser = (state = initialState, action) => {
   switch (action.type) {
     case 'UPDATE-NEW-MESSAGE-TEXT':
-      state.newMessageText = action.newText;
-      return state;
+      return {
+        ...state,
+        newMessageText: action.newText
+      }
     case 'ADD-MESSAGE':
       let newMessage = {
         id: 2,
@@ -72,9 +74,11 @@ const dialogsReduser = (state = initialState, action) => {
         name: 'User',
         text: state.newMessageText,
       }
-      state.chat.push(newMessage);
-      state.newMessageText = '';
-      return state;
+      return {
+        ...state,
+        newMessageText: '',
+        chat: [...state.chat, newMessage]
+      }
     default:
       return state;
   }

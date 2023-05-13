@@ -1,7 +1,6 @@
 import React from 'react';
 import Message from './message/Message';
 import classes from './Chat.module.css';
-import { addMessageActionCreator, inputUpdateMessageActionCreator } from '../../../redux/dialogsReduser';
 
 const Chat = (props) => {
   let chat = props.chat.map(message => <Message id={message.id} name={message.name} time={message.time} text={message.text} likesQnt={message.likesQnt} />);
@@ -9,15 +8,15 @@ const Chat = (props) => {
 
   let inputUpdate = () => {
     let text = newMessage.current.value;
-    props.dispatch(inputUpdateMessageActionCreator(text));
+    props.inputUpdate(text);
   }
 
   let addMessage = () => {
-    props.dispatch(addMessageActionCreator());
+    props.addMessage();
   }
 
   return (
-    <div className={classes.messages}>
+    <div className={classes.chat}>
       <div className={classes.container}>
         {chat}
       </div>
@@ -28,7 +27,7 @@ const Chat = (props) => {
             <textarea className={classes.textarea} onChange={inputUpdate} value={props.newMessageText} ref={newMessage} />
           </form>
           <div className={classes.container}>
-            <button className={classes.button} type='button' onClick={addMessage}>Опубликовать</button>
+            <button className={classes.button} type='button' onClick={addMessage}>Отправить</button>
           </div>
         </div>
       </div>
