@@ -1,13 +1,11 @@
 .profile {
   display: grid;
   grid-template-areas:
-  "cover cover"
-  "info feed";
-  grid-template-rows: 300px 2fr;
-  grid-template-columns: 340px 3fr;
-  column-gap: 20px;
-  width: 75%;
+  "cover"
+  "info"
+  "feed";
+  grid-template-rows: 160px 100px 1fr;
+  row-gap: 20px;
+  width: 100%;
   font-size: 0.85rem;
-  background: #ffffff;
-  box-shadow: 0 0 5px #d3d3d3;
 }

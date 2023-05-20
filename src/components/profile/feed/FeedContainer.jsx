@@ -5,7 +5,8 @@ import Feed from './Feed';
 let mapStateToProps = (state) => {
   return {
     feed: state.profile.feed,
-    newPostText: state.profile.newPostText
+    newPostText: state.profile.newPostText,
+    photo: state.profile.photos.small
   }
 }
 

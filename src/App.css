@@ -1,22 +1,22 @@
 .wrapper {
+  position: relative;
   display: grid;
   grid-template-areas:
-  "header header header"
-  "aside main ghost";
+  "header"
+  "aside"
+  "main";
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 220px 1fr 220px;
-  width: 100%;
+  width: 960px;
   height: 100%;
   margin: 0 auto;
-  /* padding: 0 20px; */
 }
 
 .main {
   grid-area: main;
   display: flex;
   justify-content: center;
+  width: 100%;
   height: 100%;
-  padding: 10px;
 }
 
 .ghost {

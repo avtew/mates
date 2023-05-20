@@ -7,11 +7,11 @@ const Aside = (props) => {
     <aside className={classes.aside}>
       <nav className={classes.nav}>
         <ul className={classes.menu}>
-          <li className={classes.item}>
+        <li className={classes.item}>
             <div className={classes.container}>
-              <NavLink className={classes.link} to='/feed'>
-                <span className={`${classes.icon} ${classes.feed}`}></span>
-                <span>Лента</span>
+              <NavLink className={classes.link} to='/user'>
+                <span className={`${classes.icon} ${classes.profile}`}></span>
+                <span>Профайл</span>
               </NavLink>
             </div>
           </li>
@@ -31,46 +31,11 @@ const Aside = (props) => {
               </NavLink>
             </div>
           </li>
-          <br></br>
           <li className={classes.item}>
             <div className={classes.container}>
               <NavLink className={classes.link} to='/users'>
                 <span className={`${classes.icon} ${classes.search}`}></span>
                 <span>Поиск мейтов</span>
-              </NavLink>
-            </div>
-          </li>
-          <br></br>
-          <li className={classes.item}>
-            <div className={classes.container}>
-              <NavLink className={classes.link} to='/profile'>
-                <span className={`${classes.icon} ${classes.profile}`}></span>
-                <span>Профайл</span>
-              </NavLink>
-            </div>
-          </li>
-          <li className={classes.item}>
-            <div className={classes.container}>
-              <NavLink className={classes.link} to='/photos'>
-                <span className={`${classes.icon} ${classes.photos}`}></span>
-                <span>Фотографии</span>
-              </NavLink>
-            </div>
-          </li>
-          <li className={classes.item}>
-            <div className={classes.container}>
-              <NavLink className={classes.link} to='/music'>
-                <span className={`${classes.icon} ${classes.music}`}></span>
-                <span>Музыка</span>
-              </NavLink>
-            </div>
-          </li>
-          <br></br>
-          <li className={classes.item}>
-            <div className={classes.container}>
-              <NavLink className={classes.link} to='/settings'>
-                <span className={`${classes.icon} ${classes.settings}`}></span>
-                <span>Настройки</span>
               </NavLink>
             </div>
           </li>

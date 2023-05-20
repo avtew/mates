@@ -7,13 +7,13 @@ const User = (props) => {
   return (
     <div className={classes.user}>
       <div className={classes.container}>
-        <NavLink to={'/profile/' + props.id}>
+        <NavLink to={'/user/' + props.id}>
           <div className={classes.avatar}>
             <img className={classes.img} src={props.photo.large != null ? props.photo.large : avatar}></img>
           </div>
         </NavLink>
         <div className={classes.info}>
-          <NavLink to={'/profile/' + props.id}>
+          <NavLink to={'/user/' + props.id}>
             <span className={classes.name}>{props.name}</span>
           </NavLink>
           {/* <span className={classes.city}>{props.city}</span> */}

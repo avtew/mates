@@ -1,11 +1,12 @@
 import React from 'react';
 import classes from './Post.module.css';
+import avatar from '../../../../assets/img/avatar.png'
 
 const Post = (props) => {
   return (
     <div className={classes.post}>
-      <div>
-        <img className={classes.avatar} src={props.avatar} />
+      <div className={classes.avatar}>
+        <img className={classes.img} src={avatar} />
       </div>
       <div className={classes.content}>
         <span className={classes.name}>{props.name}</span>

@@ -1,9 +1,10 @@
 import React from 'react';
 import Post from './post/Post';
 import classes from './Feed.module.css';
+import avatar from '../../../assets/img/avatar.png'
 
 const Feed = (props) => {
-  let feed = props.feed.map(post => <Post id={post.id} time={post.time} text={post.text} likesQnt={post.likesQnt} />);
+  let feed = props.feed.map(post => <Post id={post.id} time={post.time} text={post.text} likesQnt={post.likesQnt} photo={post.photo} />);
   let newPost = React.createRef();
 
   let inputUpdate = () => {
@@ -19,7 +20,7 @@ const Feed = (props) => {
     <div className={classes.feed}>
       <div className={classes.input}>
         <div className={classes.avatar}>
-          
+          <img className={classes.img} src={avatar} />
         </div>
         <div className={classes.content}>
           <form className={classes.form}>
