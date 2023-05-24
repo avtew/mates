@@ -30,7 +30,7 @@ class App extends React.Component {
             <Route path='/users/*' element={<Users />} />
           </Routes>
         </main>
-        <div className='ghost'></div>
+        <div className='friends'></div>
       </div>
     )
   }

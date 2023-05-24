@@ -7,11 +7,11 @@ const Aside = (props) => {
     <aside className={classes.aside}>
       <nav className={classes.nav}>
         <ul className={classes.menu}>
-        <li className={classes.item}>
+          <li className={classes.item}>
             <div className={classes.container}>
               <NavLink className={classes.link} to='/user'>
                 <span className={`${classes.icon} ${classes.profile}`}></span>
-                <span>Профайл</span>
+                <span>Profile</span>
               </NavLink>
             </div>
           </li>
@@ -19,7 +19,7 @@ const Aside = (props) => {
             <div className={classes.container}>
               <NavLink className={classes.link} to='/friends'>
                 <span className={`${classes.icon} ${classes.friends}`}></span>
-                <span>Подписки</span>
+                <span>Mates</span>
               </NavLink>
             </div>
           </li>
@@ -27,7 +27,7 @@ const Aside = (props) => {
             <div className={classes.container}>
               <NavLink className={classes.link} to='/dialogs'>
                 <span className={`${classes.icon} ${classes.dialogs}`}></span>
-                <span>Сообщения</span>
+                <span>Messages</span>
               </NavLink>
             </div>
           </li>
@@ -35,7 +35,7 @@ const Aside = (props) => {
             <div className={classes.container}>
               <NavLink className={classes.link} to='/users'>
                 <span className={`${classes.icon} ${classes.search}`}></span>
-                <span>Поиск мейтов</span>
+                <span>Search</span>
               </NavLink>
             </div>
           </li>

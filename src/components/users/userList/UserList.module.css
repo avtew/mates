@@ -1,8 +1,8 @@
 .users {
+  grid-area: users;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 0 10px 0 20px;
   height: 100%;
 }
 

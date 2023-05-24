@@ -2,11 +2,11 @@
   position: relative;
   display: grid;
   grid-template-areas:
-  "header"
-  "aside"
-  "main";
+  "header header header"
+  "aside main friends";
   grid-template-rows: 60px 1fr;
-  width: 960px;
+  grid-template-columns: 2fr 16fr 2fr ;
+  width: 1320px;
   height: 100%;
   margin: 0 auto;
 }
@@ -15,10 +15,11 @@
   grid-area: main;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 960px;
   height: 100%;
 }
 
-.ghost {
-  grid-area: ghost;
+.friends {
+  grid-area: friends;
+  width: 180px;
 }

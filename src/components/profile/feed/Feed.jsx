@@ -2,9 +2,17 @@ import React from 'react';
 import Post from './post/Post';
 import classes from './Feed.module.css';
 import avatar from '../../../assets/img/avatar.png'
+import Preloader from '../../common/preloader/Preloader';
 
 const Feed = (props) => {
-  let feed = props.feed.map(post => <Post id={post.id} time={post.time} text={post.text} likesQnt={post.likesQnt} photo={post.photo} />);
+  if (!props.profile) {
+    return <Preloader />
+  }
+  let feed = [];
+  if (props.id === props.profile.userId) {
+    feed = props.feed.map(post => <Post id={post.id} name={props.name} time={post.time} text={post.text} likesQnt={post.likesQnt} photo={post.photo} />);
+  }
+
   let newPost = React.createRef();
 
   let inputUpdate = () => {
@@ -15,7 +23,6 @@ const Feed = (props) => {
   let addPost = () => {
     props.addPost();
   }
-
   return (
     <div className={classes.feed}>
       <div className={classes.input}>
@@ -24,11 +31,9 @@ const Feed = (props) => {
         </div>
         <div className={classes.content}>
           <form className={classes.form}>
-            <textarea className={classes.textarea} onChange={inputUpdate} value={props.newPostText} ref={newPost} />
+            <textarea className={classes.textarea} onChange={inputUpdate} value={props.newPostText} ref={newPost} placeholder="What's up, mate?" />
+            <button className={classes.button} type='button' onClick={addPost}>Publish</button>
           </form>
-          <div className={classes.container}>
-            <button className={classes.button} type='button' onClick={addPost} >Опубликовать</button>
-          </div>
         </div>
       </div>
       <div className={classes.posts}>

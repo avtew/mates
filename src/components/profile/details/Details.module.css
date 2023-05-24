@@ -1,0 +1,93 @@
+.details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  margin: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+}
+
+.icon {
+  color: #66CC66;
+  font-family: 'icon' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+
+.pencil:before {
+  content: "\e9a4";
+  margin-left: auto;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 0;
+}
+
+.item {
+  display: flex;
+  gap: 10px;
+  height: 40px;
+  padding: 10px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.item:hover .socialIcon {
+  transform: scale(1.1);
+}
+
+.item:hover .link {
+  color: #66CC66;
+}
+
+.socialIcon {
+  color: #66CC66;
+  font-family: 'social-icons' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.github:before {
+  content: "\eab0";
+}
+
+.facebook:before {
+  content: "\ea91";
+}
+
+.instagram:before {
+  content: "\ea92";
+}
+
+.twitter:before {
+  content: "\ea96";
+}

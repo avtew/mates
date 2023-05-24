@@ -16,7 +16,7 @@ class UserListContainer extends React.Component {
 
   render() {
     return (
-      <UserList users={this.props.users} userQnt={this.props.userQnt} pageSize={this.props.pageSize} currentPage={this.props.currentPage} pageDidChange={this.pageDidChange} isFetching={this.props.isFetching} follow={this.props.followUser} unfollow={this.props.unfollowUser} />
+      <UserList users={this.props.users} userQnt={this.props.userQnt} pageSize={this.props.pageSize} currentPage={this.props.currentPage} pageDidChange={this.pageDidChange} isFetching={this.props.isFetching} follow={this.props.followUser} unfollow={this.props.unfollowUser} withPhoto={this.props.withPhoto} />
     )
   }
 }
@@ -24,6 +24,7 @@ class UserListContainer extends React.Component {
 let mapStateToProps = (state) => {
   return {
     users: state.users.users,
+    withPhoto: state.users.withPhoto,
     userQnt: state.users.userQnt,
     pageSize: state.users.pageSize,
     currentPage: state.users.currentPage,

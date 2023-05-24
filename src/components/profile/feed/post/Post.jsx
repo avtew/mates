@@ -9,12 +9,10 @@ const Post = (props) => {
         <img className={classes.img} src={avatar} />
       </div>
       <div className={classes.content}>
-        <span className={classes.name}>{props.name}</span>
-        <span className={classes.time}>{props.time}</span>
-        <p className={classes.text}>{props.text}</p>
-        <div className={classes.likes}>
-          <span className={`${classes.icon} ${classes.heart}`}></span> 
-          <span className={classes.likesQnt}>{props.likesQnt}</span>
+        <div className={classes.container}>
+          <span className={classes.name}>{props.name}</span>
+          <span className={classes.time}>{props.time}</span>
+          <p className={classes.text}>{props.text}</p>
         </div>
       </div>
     </div>

@@ -7,6 +7,14 @@
 }
 
 @font-face {
+  font-family: 'social-icons';
+  src:  url('./assets/fonts/social-icons.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
   font-family: 'GolosText';
   src:  url('./assets/fonts/GolosText.ttf');
   font-weight: 400 700 900;
@@ -29,7 +37,6 @@
 
 html {
   height: 100vh;
-  padding: 10px;
 }
 
 body {

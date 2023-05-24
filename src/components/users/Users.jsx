@@ -1,12 +1,12 @@
 import React from 'react';
-import FiltersContainer from './filters/FiltersContainer';
+import Filters from './filters/Filters';
 import UserListContainer from './userList/UserListContainer';
 import classes from './Users.module.css';
 
 const Users = (props) => {
   return (
     <div className={classes.users}>
-      <FiltersContainer />
+      <Filters />
       <UserListContainer />
     </div>
   );

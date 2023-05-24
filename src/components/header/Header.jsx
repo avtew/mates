@@ -6,7 +6,9 @@ const Header = (props) => {
     <header className={classes.header}>
       <img className={classes.logo} src={require('../../assets/icons/logo.png')} alt='logo' />
       <div className={classes.icons}>
-        <div className={classes.avatar}></div>
+        <div className={classes.avatar}>
+          <img src={props.avatar} />
+        </div>
       </div>
     </header>
   );

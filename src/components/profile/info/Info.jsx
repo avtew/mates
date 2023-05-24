@@ -1,24 +1,22 @@
 import React from 'react';
 import Preloader from '../../common/preloader/Preloader';
 import classes from './Info.module.css';
-import avatar from '../../../assets/img/avatar.png'
+import Avatar from '../../common/avatar/Avatar';
+import ProfileStatus from '../../common/status/ProfileStatus';
+import Status from '../../common/status/Status';
 
 const Info = (props) => {
   if (!props.profile) {
     return <Preloader />
   }
-
   return (
     <div className={classes.info}>
-      <div className={classes.avatar}>
-        <img className={classes.img} src={props.profile.photos.small ? props.profile.photos.small : avatar} />
-      </div>
+      <Avatar photo={props.profile.photos.large} />
       <div className={classes.container}>
         <span className={classes.name}>{props.profile.fullName}</span>
-        <div className={classes.status}>
-          <span className={classes.text}>{props.status}</span>
-          <span className={`${classes.icon} ${classes.pencil}`}></span>
-        </div>
+        {props.id === props.profile.userId
+          ? <ProfileStatus />
+          : <></>}
       </div>
     </div>
   );

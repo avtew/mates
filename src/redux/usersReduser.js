@@ -2,9 +2,10 @@ import { usersAPI, followAPI } from './../api/api';
 
 let initialState = {
   users: [],
+  withPhoto: true,
   userQnt: 0,
   currentPage: 1,
-  pageSize: 10,
+  pageSize: 100,
   isFetching: false,
 }
 
