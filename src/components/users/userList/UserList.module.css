@@ -2,28 +2,44 @@
   grid-area: users;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   height: 100%;
 }
 
-.pages {
+.button {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-self: center;
-  margin-bottom: 20px;
-  font-size: 1rem;
-}
-
-.number {
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  width: 655px;
+  height: 40px;
+  margin: 0 10px;
+  font-family: Commissioner;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border: none;
   cursor: pointer;
 }
 
-.number:hover {
-  color: #9966cc;
+.more:before {
+  content: "\eb5c";
+  margin-right: 5px;
+  color: #66cc66;
+  font-family: 'icon' !important;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.selected {
-  color: #9966cc;
+.button:hover {
+  color: #ffffff;
+  background: #66cc66;
+}
+
+.button:hover:before {
+  color: #ffffff;
 }

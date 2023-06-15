@@ -6,20 +6,6 @@
   font: 1rem Commissioner;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
-}
-
-.img {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
-}
-
 .content {
   position: relative;
   width: 520px;

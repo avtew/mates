@@ -1,10 +1,8 @@
 import { profileAPI } from "../api/api"
-import { getUserAuth } from "./authReduser"
-
-getUserAuth();
 
 let initialState = {
   profile: null,
+  status: '',
   newPostText: '',
   feed: [],
 }
@@ -16,16 +14,17 @@ export const setUserProfile = (profile) => {
   }
 }
 
-export const inputUpdate = (text) => {
+export const setStatus = (status) => {
   return {
-    type: 'UPDATE-NEW-POST-TEXT', 
-    newText: text
+    type: 'SET-STATUS',
+    status: status
   }
 }
 
-export const addPost = () => {
+export const addPost = (newPostText) => {
   return {
-    type: 'ADD-POST'
+    type: 'ADD-POST',
+    newPostText
   }
 }
 
@@ -36,6 +35,11 @@ const profileReduser = (state = initialState, action) => {
         ...state,
         profile: action.profile
       }
+    case 'SET-STATUS':
+      return {
+        ...state,
+        status: action.status
+      }
     case 'UPDATE-NEW-POST-TEXT':
       return {
         ...state,
@@ -45,7 +49,7 @@ const profileReduser = (state = initialState, action) => {
       let newPost = {
         id: 0,
         time: new Date().toLocaleString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }),
-        text: state.newPostText,
+        text: action.newPostText,
       };
       return {
         ...state,
@@ -61,6 +65,24 @@ export const getUserProfile = (userId) => {
   return (dispatch) => {
     profileAPI.getProfile(userId).then(response => {
       dispatch(setUserProfile(response.data));
+    })
+  }
+}
+
+export const getStatus = (userId) => {
+  return (dispatch) => {
+    profileAPI.getStatus(userId).then(response => {
+      dispatch(setStatus(response.data));
+    })
+  }
+}
+
+export const updateStatus = (status) => {
+  return (dispatch) => {
+    profileAPI.updateStatus(status).then(response => {
+      if (response.data.resultCode === 0) {
+        dispatch(setStatus(status));
+      }
     })
   }
 }

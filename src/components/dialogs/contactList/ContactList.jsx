@@ -7,7 +7,7 @@ const ContactList = (props) => {
   return (
     <div className={classes.contacts}>
       <div className={classes.title}>
-        <span><span className={`${classes.icon} ${classes.chats}`}></span>Контакты</span>
+        <span>Mates</span>
         <span className={classes.contactsQnt}>{contacts.length}</span>
       </div>
       {contacts}

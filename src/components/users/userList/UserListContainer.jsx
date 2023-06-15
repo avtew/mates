@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getUsers, setCurrentPage, getNewUsers, followUser, unfollowUser,  } from '../../../redux/usersReduser';
 import UserList from './UserList';
+import { getCurrentPageSelector, getIsFetchingSelector, getPageSizeSelector, getUserQntSelector, getUsersSelector } from '../../../redux/usersSelectors';
 
 class UserListContainer extends React.Component {
 
@@ -23,12 +24,12 @@ class UserListContainer extends React.Component {
 
 let mapStateToProps = (state) => {
   return {
-    users: state.users.users,
+    users: getUsersSelector(state),
     withPhoto: state.users.withPhoto,
-    userQnt: state.users.userQnt,
-    pageSize: state.users.pageSize,
-    currentPage: state.users.currentPage,
-    isFetching: state.users.isFetching
+    userQnt: getUserQntSelector(state),
+    pageSize: getPageSizeSelector(state),
+    currentPage: getCurrentPageSelector(state),
+    isFetching: getIsFetchingSelector(state)
   }
 }
 

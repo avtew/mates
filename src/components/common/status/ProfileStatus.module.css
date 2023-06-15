@@ -57,6 +57,17 @@
   content: "\e9a4";
 }
 
+.save:before {
+  content: "\ebe7";
+}
+
 .icon:hover {
   transform: scale(1.2);
+}
+
+.input {
+  font-family: Commissioner;
+  opacity: 75%;
+  border: none;
+  outline: none;
 }

@@ -10,41 +10,43 @@ let Details = (props) => {
     <div className={classes.details}>
       <div className={classes.title}>
         Contacts
-        <span className={`${classes.icon} ${classes.pencil}`}></span>
+        {props.profile.userId === props.id 
+          ? <span className={`${classes.icon} ${classes.pencil}`}></span>
+          : <></> }
       </div>
       <ul className={classes.list}>
-        <li className={classes.item}>
-          <span className={`${classes.socialIcon} ${classes.github}`} />
-          {props.profile.contacts.github
-          ? <a href={props.profile.contacts.github}>
-              <span className={classes.link}>{props.profile.contacts.github}</span>
+        {props.profile.contacts.github &&
+          <li className={classes.item}>
+            <span className={`${classes.socialIcon} ${classes.github}`} />
+            <a href={props.profile.contacts.github}>
+              <span className={classes.link}>GitHub</span>
             </a>
-          : <span><i>(not added)</i></span> }
-        </li>
-        <li className={classes.item}>
-          <span className={`${classes.socialIcon} ${classes.facebook}`} />
-          {props.profile.contacts.facebook
-          ? <a href={props.profile.contacts.facebook}>
-              <span className={classes.link}>{props.profile.contacts.facebook}</span>
+          </li>
+        }
+        {props.profile.contacts.facebook &&
+          <li className={classes.item}>
+            <span className={`${classes.socialIcon} ${classes.facebook}`} />
+            <a href={props.profile.contacts.facebook}>
+              <span className={classes.link}>Facebook</span>
             </a>
-          : <span><i>(not added)</i></span> }
-        </li>
-        <li className={classes.item}>
-          <span className={`${classes.socialIcon} ${classes.instagram}`} />
-          {props.profile.contacts.instagram
-          ? <a href={props.profile.contacts.instagram}>
-              <span className={classes.link}>{props.profile.contacts.instagram}</span>
+          </li>
+        }
+        {props.profile.contacts.instagram &&
+          <li className={classes.item}>
+            <span className={`${classes.socialIcon} ${classes.instagram}`} />
+            <a href={props.profile.contacts.instagram}>
+              <span className={classes.link}>Instagram</span>
             </a>
-          : <span><i>(not added)</i></span> }
-        </li>
-        <li className={classes.item}>
-          <span className={`${classes.socialIcon} ${classes.twitter}`} />
-          {props.profile.contacts.twitter
-          ? <a href={props.profile.contacts.twitter}>
-              <span className={classes.link}>{props.profile.contacts.twitter}</span>
+          </li>
+        }
+        {props.profile.contacts.twitter &&
+          <li className={classes.item}>
+            <span className={`${classes.socialIcon} ${classes.twitter}`} />
+            <a href={props.profile.contacts.twitter}>
+              <span className={classes.link}>Twitter</span>
             </a>
-          : <span><i>(not added)</i></span> }
-        </li>
+          </li>
+        }
       </ul >
     </div >
   )

@@ -10,39 +10,25 @@
   display: flex;
   gap: 20px;
   width: 660px;
-  height: 240px;
   padding: 10px;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
-}
-
-.img {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  border: none;
 }
 
 .content {
   position: relative;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
 }
 
-.content:before, .content:after {
-	content: "";
+.content:before,
+.content:after {
+  content: "";
   z-index: -1;
   position: absolute;
   top: 20px;
-  margin-top:-5px;
+  margin-top: -5px;
   left: -5px;
   width: 10px;
   height: 10px;
@@ -60,81 +46,5 @@
 .form {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   gap: 20px;
-  height: 75%;
-}
-
-.textarea {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  font: 0.875rem Commissioner;
-  border: none;
-  outline: none;
-  resize: none;
-}
-
-.button {
-  position: absolute;
-  bottom: 10px;
-  width: 120px;
-  height: 40px;
-  font: 0.875rem Commissioner;
-  background: none;
-  border: 1px solid lightgrey;
-  border-radius: 10px;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
-  cursor: pointer;
-}
-
-.name {
-  color: #9966cc;
-  font-variation-settings: "wght" 500;
-}
-
-.time {
-  font-size: 0.875rem;
-  opacity: 0.5;
-}
-
-.text {
-  margin: 0;
-  font: 0.875rem Commissioner;
-}
-
-.icon {
-  font-family: 'icomoon' !important;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.likes {
-  display: flex;
-  gap: 5px;
-  align-items: center;
-  margin-top: 10px;
-  padding-top: 10px;
-  color: #9966CC;
-  border-top: 1px solid lightgrey;
-}
-
-.heart:before {
-  content: "\e922";
-}
-
-.likesQnt {
-  line-height: 150%;
-}
-
-.posts {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
 }

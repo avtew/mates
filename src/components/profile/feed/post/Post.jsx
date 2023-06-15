@@ -1,13 +1,12 @@
 import React from 'react';
 import classes from './Post.module.css';
 import avatar from '../../../../assets/img/avatar.png'
+import AvatarSmall from '../../../common/avatar/AvatarSmall';
 
 const Post = (props) => {
   return (
     <div className={classes.post}>
-      <div className={classes.avatar}>
-        <img className={classes.img} src={avatar} />
-      </div>
+      <AvatarSmall />
       <div className={classes.content}>
         <div className={classes.container}>
           <span className={classes.name}>{props.name}</span>

@@ -15,8 +15,8 @@ const Info = (props) => {
       <div className={classes.container}>
         <span className={classes.name}>{props.profile.fullName}</span>
         {props.id === props.profile.userId
-          ? <ProfileStatus />
-          : <></>}
+          ? <ProfileStatus status={props.status} updateStatus={props.updateStatus} />
+          : <Status status={props.status} updateStatus={props.updateStatus} />}
       </div>
     </div>
   );

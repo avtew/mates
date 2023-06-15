@@ -2,16 +2,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0 10px 0 20px;
-  height: 100%;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  gap: 20px;
   height: 100%;
-  padding-top: 20px;
+  padding: 10px;
 }
 
 .input {
@@ -22,75 +21,68 @@
   padding: 10px;
 }
 
-.avatar {
-  width: 40px;
-  height: 40px;
-  border: 1px solid black;
-}
-
 .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 2;
-  gap: 20px;
-  width: 70%;
-  padding: 20px;
-  background: rgba(153, 102, 204, 0.075);
+  position: relative;
+  width: 100%;
+  padding: 15px 10px 15px 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
 }
 
-.content:before {
+.content:before, .content:after {
 	content: "";
+  z-index: -1;
   position: absolute;
-  z-index: 0;
-  left: 57px;
-  top: 19px;
-  width: 0;
-  height: 0;
-  border-top: 12px solid transparent;
-  border-right: 13px solid rgba(153, 102, 204, 0.075);
-  border-bottom: 12px solid transparent;
+  top: 20px;
+  margin-top:-5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-width: 0 0 1px 1px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  transform: rotate(45deg);
+}
+
+.content:after {
+  z-index: 1;
+  box-shadow: none;
 }
 
 .form {
   display: flex;
-  flex-direction: column;
   align-items: flex-end;
   gap: 20px;
 }
 
 .textarea {
+  position: relative;
   width: 100%;
-  height: 100px;
-  padding: 10px;
+  height: 100%;
   font: 0.875rem Commissioner;
-  border: 1px solid lightgrey;
+  border: none;
   outline: none;
   resize: none;
 }
 
 .button {
-  width: 120px;
+  width: 40px;
   height: 40px;
-  font: 0.875rem Commissioner;
-  background: none;
-  border: 1px solid lightgrey;
-  cursor: pointer;
-}
-
-/* .icon {
-  font-family: 'icomoon' !important;
-  color: #9966cc;
-  font-size: 1.75rem;
+  color: #66CC66;
+  font-family: 'icon' !important;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.send:before {
-  content: "\e905";
-} */
+.button:before {
+  content: "\e9b5";
+}

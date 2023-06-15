@@ -1,25 +1,14 @@
 import {connect} from 'react-redux';
-import { addMessageActionCreator, inputUpdateMessageActionCreator } from '../../../redux/dialogsReduser';
+import { addMessage } from '../../../redux/dialogsReduser';
 import Chat from './Chat';
 
 let mapStateToProps = (state) => {
   return {
     chat: state.dialogs.chat,
-    newMessageText: state.dialogs.newMessageText
+    name: state.auth.login
   }
 }
 
-let mapDispatchToProps = (dispatch) => {
-  return {
-    inputUpdate: (text) => {
-      dispatch(inputUpdateMessageActionCreator(text));
-    },
-    addMessage: () => {
-      dispatch(addMessageActionCreator());
-    }
-  }
-}
-
-const ChatContainer = connect (mapStateToProps, mapDispatchToProps) (Chat);
+const ChatContainer = connect (mapStateToProps, {addMessage}) (Chat);
 
 export default ChatContainer;

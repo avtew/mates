@@ -5,7 +5,7 @@
   "header header header"
   "aside main friends";
   grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 16fr 2fr ;
+  grid-template-columns: 180px 16fr 180px ;
   width: 1320px;
   height: 100%;
   margin: 0 auto;

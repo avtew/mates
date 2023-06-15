@@ -1,18 +1,25 @@
 import React from 'react';
 import Message from './message/Message';
 import classes from './Chat.module.css';
+import AvatarSmall from './../../common/avatar/AvatarSmall';
+import { Field, reduxForm } from 'redux-form';
+
+const MessageForm = (props) => {
+  return (
+    <form className={classes.form} onSubmit={props.handleSubmit}>
+      <Field component={'textarea'} name={'newMessageText'} className={classes.textarea} rows='3' />
+      <button className={`${classes.button} ${classes.send}`} />
+    </form>
+  )
+}
+
+const MessageReduxForm = reduxForm({form: 'messageForm'})(MessageForm)
 
 const Chat = (props) => {
-  let chat = props.chat.map(message => <Message id={message.id} name={message.name} time={message.time} text={message.text} likesQnt={message.likesQnt} />);
-  let newMessage = React.createRef();
+  let chat = props.chat.map(message => <Message id={message.id} name={props.name} text={message.text} />);
 
-  let inputUpdate = () => {
-    let text = newMessage.current.value;
-    props.inputUpdate(text);
-  }
-
-  let addMessage = () => {
-    props.addMessage();
+  let createMessage = (values) => {
+    props.addMessage(values.newMessageText);
   }
 
   return (
@@ -21,14 +28,9 @@ const Chat = (props) => {
         {chat}
       </div>
       <div className={classes.input}>
-        <div className={classes.avatar}></div>
+        <AvatarSmall />
         <div className={classes.content}>
-          <form className={classes.form}>
-            <textarea className={classes.textarea} onChange={inputUpdate} value={props.newMessageText} ref={newMessage} />
-          </form>
-          <div className={classes.container}>
-            <button className={classes.button} type='button' onClick={addMessage}>Отправить</button>
-          </div>
+          <MessageReduxForm onSubmit={createMessage} />
         </div>
       </div>
     </div>
