@@ -1,54 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from './ProfileStatus.module.css'
 
-class ProfileStatus extends React.Component {
-
-  state = {
-    editMode: false,
-    status: this.props.status
+const ProfileStatus = (props) => {
+  let [editMode, setEditMode] = useState(false);
+  let [status, setStatus] = useState(props.status);
+  
+  const activateEditMode = () => {
+    setEditMode(true);
   }
 
-  activateEditMode = () => {
-    this.setState({
-      editMode: true
-    })
+  const deactivateEditMode = () => {
+    setEditMode(false);
+    props.updateStatus(status);
   }
 
-  deactivateEditMode = () => {
-    this.setState({
-      editMode: false,
-    })
-    this.props.updateStatus(this.state.status);
+  const onStatusChange = (e) => {
+    setStatus(e.currentTarget.value);
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.status !== this.props.status) {
-      this.setState({
-        status: this.props.status
-      })
-    }
-  }
-
-  onStatusChange = (e) => {
-    this.setState({
-      status: e.currentTarget.value
-    })
-  }
-
-  render() {
-    return (
-      <div className={classes.status}>
-        {this.state.editMode
-          ? <input className={classes.input} onChange={this.onStatusChange} value={this.state.status} autofocus='true' />
-          : <p className={classes.text}>{this.props.status}</p>
-        }
-        {this.state.editMode
-          ? <span className={`${classes.icon} ${classes.save}`} onClick={this.deactivateEditMode}></span>
-          : <span className={`${classes.icon} ${classes.pencil}`} onClick={this.activateEditMode}></span>
-        }
-      </div>
-    );
-  }
+  return (
+    <div className={classes.status}>
+      {editMode
+        ? <input className={classes.input} autofocus='true' value={status} onChange={onStatusChange} />
+        : <p className={classes.text}>{props.status}</p>
+      }
+      {editMode
+        ? <span className={`${classes.icon} ${classes.save}`} onClick={deactivateEditMode}></span>
+        : <span className={`${classes.icon} ${classes.pencil}`} onClick={activateEditMode}></span>
+      }
+    </div>
+  );
 }
 
 export default ProfileStatus;

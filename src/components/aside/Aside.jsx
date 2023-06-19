@@ -3,9 +3,13 @@ import { NavLink } from 'react-router-dom';
 import classes from './Aside.module.css';
 
 const Aside = (props) => {
+  const setInitialCurrentPage = () => {
+    props.setCurrentPage(1);
+  }
+
   return (
-    props.isAuth
-      ? <aside className={classes.aside}>
+    props.isAuth &&
+      <aside className={classes.aside}>
         <nav className={classes.nav}>
           <ul className={classes.menu}>
             <li className={classes.item}>
@@ -34,7 +38,7 @@ const Aside = (props) => {
             </li>
             <li className={classes.item}>
               <div className={classes.container}>
-                <NavLink className={classes.link} to='/users'>
+                <NavLink className={classes.link} to='/users' onClick={setInitialCurrentPage}>
                   <span className={`${classes.icon} ${classes.search}`}></span>
                   <span>Search</span>
                 </NavLink>
@@ -43,7 +47,6 @@ const Aside = (props) => {
           </ul>
         </nav>
       </aside >
-    : <></>
   )
 }
 

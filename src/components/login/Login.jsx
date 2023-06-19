@@ -22,10 +22,18 @@ const LoginForm = (props) => {
       </div>
       <button className={`${classes.button} ${classes.log}`}>Log In</button>
       {props.error 
-        ? <div className={classes.error}>
+        ? <div className={classes.content}>
             {props.error}
           </div>
-        : <></>}
+        : 
+        <div className={classes.content}>
+          You can log in using <br></br>
+          the test account data:<br></br>
+          <br></br>
+          free@samuraijs.com<br></br>
+          free
+        </div>
+      }
       <img src={formImg} className={classes.img} alt='By rawpixel.com on Freepik' />
     </form>
   )
@@ -37,7 +45,6 @@ const LoginReduxForm = reduxForm({
 
 const Login = (props) => {
   const onSubmit = (formData) => {
-    console.log(formData);
     props.login(formData.email, formData.password, formData.rememberMe)
   }
 

@@ -3,16 +3,18 @@ let initialState = {
   chat: []
 }
 
+const ADD_MESSAGE = 'mates/dialogsReduser/ADD_MESSAGE';
+
 export const addMessage = (newMessageText) => {
   return {
-    type: 'ADD-MESSAGE',
-    newMessageText
+    type: ADD_MESSAGE,
+    newMessageText,
   }
 }
 
 const dialogsReduser = (state = initialState, action) => {
   switch (action.type) {
-    case 'ADD-MESSAGE':
+    case ADD_MESSAGE:
       let newMessage = {
         id: 2,
         img: null,

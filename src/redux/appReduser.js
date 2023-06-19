@@ -4,15 +4,11 @@ let initialState = {
   isInitialized: false
 }
 
-export const initialaze = () => {
-  return {
-    type: 'INITIALIZE'
-  }
-};
+const INITIALIZE = 'mates/appReduser/INITIALIZE';
 
 const appReduser = (state = initialState, action) => {
   switch (action.type) {
-    case 'INITIALIZE':
+    case INITIALIZE:
       return {
         ...state,
         isInitialized: true,
@@ -21,6 +17,12 @@ const appReduser = (state = initialState, action) => {
       return state;
   }
 }
+
+export const initialaze = () => {
+  return {
+    type: INITIALIZE,
+  }
+};
 
 export const initializeApp = () => (dispatch) => {
   let promise = dispatch(getUserAuth());

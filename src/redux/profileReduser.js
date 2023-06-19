@@ -7,45 +7,50 @@ let initialState = {
   feed: [],
 }
 
+const SET_USER_PROFILE = 'mates/profileReduser/SET_USER_PROFILE';
+const SET_STATUS = 'mates/profileReduser/SET_STATUS';
+const UPDATE_NEW_POST_TEXT = 'mates/profileReduser/UPDATE_NEW_POST_TEXT';
+const ADD_POST = 'mates/profileReduser/ADD_POST';
+
 export const setUserProfile = (profile) => {
   return {
-    type: 'SET-USER-PROFILE',
-    profile
+    type: SET_USER_PROFILE,
+    profile,
   }
 }
 
 export const setStatus = (status) => {
   return {
-    type: 'SET-STATUS',
-    status: status
+    type: SET_STATUS,
+    status: status,
   }
 }
 
 export const addPost = (newPostText) => {
   return {
-    type: 'ADD-POST',
-    newPostText
+    type: ADD_POST,
+    newPostText,
   }
 }
 
 const profileReduser = (state = initialState, action) => {
   switch (action.type) {
-    case 'SET-USER-PROFILE':
+    case SET_USER_PROFILE:
       return {
         ...state,
         profile: action.profile
       }
-    case 'SET-STATUS':
+    case SET_STATUS:
       return {
         ...state,
         status: action.status
       }
-    case 'UPDATE-NEW-POST-TEXT':
+    case UPDATE_NEW_POST_TEXT:
       return {
         ...state,
         newPostText: action.newText
       }
-    case 'ADD-POST':
+    case ADD_POST:
       let newPost = {
         id: 0,
         time: new Date().toLocaleString('en-GB', { year: 'numeric', month: 'long', day: 'numeric' }),

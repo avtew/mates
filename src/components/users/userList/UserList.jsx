@@ -1,6 +1,6 @@
 import React from 'react';
 import User from './user/User';
-import Preloader from '../../common/preloader/Preloader';
+// import Preloader from '../../common/preloader/Preloader';
 import classes from './UserList.module.css';
 
 
@@ -13,7 +13,7 @@ let UserList = (props) => {
           ? users.filter(user => user.props.photo != null)
           : users }
       </div>
-      {props.isFetching ? <Preloader /> : null}
+      {/* {props.isFetching ? <Preloader /> : null} */}
       <button className={`${classes.button} ${classes.more}`} onClick={() => { props.pageDidChange(props.currentPage + 1) }}>More</button>
     </div>
   );

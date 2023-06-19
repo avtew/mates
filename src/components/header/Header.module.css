@@ -56,4 +56,8 @@
   cursor: pointer;
 }
 
+.profile:hover .user,
+.logout:hover {
+  transform: scale(1.1);
+}
 
