@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import DetailsReduxForm from '../../common/forms/detailsForm/DetailsForm';
+import DetailsForm from '../../common/forms/detailsForm/DetailsForm';
 import Preloader from './../../common/preloader/Preloader';
 import classes from './Details.module.css'
 
@@ -26,29 +26,24 @@ const Details = (props) => {
     setEditMode(false);
   }
 
-  const onSubmit = (formData) => {
-    const data =  {
-      'fullName': props.profile.fullName,
-      'lookingForAjobDescription': '-',
-      'aboutMe': '-', 
-      'contacts': formData.contacts
-    };
-    console.log(data);
-    props.updateProfile(data);
-    setEditMode(false);
-  }
-
   if (!props.profile) {
     return <Preloader />
   }
+
+  let icon;
+  if(props.profile.userId === props.id && editMode === false) {
+    icon = <span className={`${'icon'} ${'pencil'}`} onClick={activateEditMode} />
+  } else if(props.profile.userId === props.id && editMode === true) {
+    icon = <span className={`${'icon'} ${'cancel'}`} onClick={deactivateEditMode} />
+  } else {
+    <></>
+  }
+  
   return (
     <div className={classes.details}>
       <div className={classes.title}>
         Contacts
-        {props.profile.userId === props.id && editMode === false
-          ? <span className={`${'icon'} ${'pencil'}`} onClick={activateEditMode}></span>
-          : <span className={`${'icon'} ${'cancel'}`} onClick={deactivateEditMode}></span>
-        }
+        {icon}
       </div>
       {editMode === false
         ? <ul className={classes.list}>
@@ -59,7 +54,7 @@ const Details = (props) => {
           <Link title={'Twitter'} value={props.profile.contacts.twitter} className={'twitter'} />
           <Link title={'YouTube'} value={props.profile.contacts.youtube} className={'youtube'} />
         </ul>
-        : <DetailsReduxForm onSubmit={onSubmit}/>
+        : <DetailsForm profile={props.profile} updateProfile={props.updateProfile} setEditMode={setEditMode} />
       }
     </div>
   )

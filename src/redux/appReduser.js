@@ -24,6 +24,7 @@ export const initialaze = () => {
   }
 };
 
+
 export const initializeApp = () => (dispatch) => {
   let authPromise = dispatch(getUserAuth());
   Promise.all([authPromise]).then(() => {
