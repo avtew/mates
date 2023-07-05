@@ -11,6 +11,7 @@ const SET_USER_PROFILE = 'mates/profileReduser/SET_USER_PROFILE';
 const SET_STATUS = 'mates/profileReduser/SET_STATUS';
 const UPDATE_NEW_POST_TEXT = 'mates/profileReduser/UPDATE_NEW_POST_TEXT';
 const ADD_POST = 'mates/profileReduser/ADD_POST';
+const SET_AVATAR = 'mates/profileReduser/SET_AVATAR';
 
 export const setUserProfile = (profile) => {
   return {
@@ -33,6 +34,13 @@ export const addPost = (newPostText) => {
   }
 }
 
+export const setAvatar = (photos) => {
+  return {
+    type: SET_AVATAR,
+    photos,
+  }
+}
+
 const profileReduser = (state = initialState, action) => {
   switch (action.type) {
     case SET_USER_PROFILE:
@@ -48,7 +56,7 @@ const profileReduser = (state = initialState, action) => {
     case UPDATE_NEW_POST_TEXT:
       return {
         ...state,
-        newPostText: action.newText
+        newPostText: action.newText,
       }
     case ADD_POST:
       let newPost = {
@@ -59,7 +67,12 @@ const profileReduser = (state = initialState, action) => {
       return {
         ...state,
         newPostText: '',
-        feed: [newPost, ...state.feed]
+        feed: [newPost, ...state.feed],
+      }
+    case SET_AVATAR:
+      return {
+        ...state,
+        profile: { ...state.profile, photos: action.photos }
       }
     default:
       return state;
@@ -89,6 +102,21 @@ export const updateStatus = (status) => {
         dispatch(setStatus(status));
       }
     })
+  }
+}
+
+export const updateAvatar = (file) => async (dispatch) => {
+  let response = await profileAPI.updateAvatar(file);
+  if (response.data.resultCode === 0) {
+    dispatch(setAvatar(response.data.data.photos));
+  }
+}
+
+export const updateProfile = (profile) => async (dispatch, getState) => {
+  const userId = getState().auth.userId;
+  let response = await profileAPI.updateProfile(profile);
+  if (response.data.resultCode === 0) {
+    dispatch(getUserProfile(userId));
   }
 }
 

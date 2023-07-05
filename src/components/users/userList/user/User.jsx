@@ -9,7 +9,7 @@ const User = (props) => {
     <div className={classes.user}>
       <div className={classes.container}>
         <NavLink to={'/user/' + props.id}>
-          <Avatar photo={props.photo} />
+          <Avatar photo={props.photo} id={props.id} />
         </NavLink>
         <div className={classes.info}>
           <NavLink to={'/user/' + props.id}>

@@ -2,51 +2,31 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Aside.module.css';
 
-const Aside = (props) => {
-  const setInitialCurrentPage = () => {
-    props.setCurrentPage(1);
-  }
+const MenuLink = ({ path, className, title }) => {
+  return (
+    <li className={classes.item}>
+      <div className={classes.container}>
+        <NavLink className={classes.link} to={path}>
+          <span className={`${'icon'} ${classes.icon} ${className}`}></span>
+          <span>{title}</span>
+        </NavLink>
+      </div>
+    </li>
+  )
+}
 
+const Aside = (props) => {
   return (
     props.isAuth &&
-      <aside className={classes.aside}>
-        <nav className={classes.nav}>
-          <ul className={classes.menu}>
-            <li className={classes.item}>
-              <div className={classes.container}>
-                <NavLink className={classes.link} to='/user'>
-                  <span className={`${classes.icon} ${classes.profile}`}></span>
-                  <span>Profile</span>
-                </NavLink>
-              </div>
-            </li>
-            {/* <li className={classes.item}>
-              <div className={classes.container}>
-                <NavLink className={classes.link} to='/friends'>
-                  <span className={`${classes.icon} ${classes.friends}`}></span>
-                  <span>Mates</span>
-                </NavLink>
-              </div>
-            </li> */}
-            <li className={classes.item}>
-              <div className={classes.container}>
-                <NavLink className={classes.link} to='/dialogs'>
-                  <span className={`${classes.icon} ${classes.dialogs}`}></span>
-                  <span>Messages</span>
-                </NavLink>
-              </div>
-            </li>
-            <li className={classes.item}>
-              <div className={classes.container}>
-                <NavLink className={classes.link} to='/users' onClick={setInitialCurrentPage}>
-                  <span className={`${classes.icon} ${classes.search}`}></span>
-                  <span>Search</span>
-                </NavLink>
-              </div>
-            </li>
-          </ul>
-        </nav>
-      </aside >
+    <aside className={classes.aside}>
+      <nav className={classes.nav}>
+        <ul className={classes.menu}>
+          <MenuLink path={'/user'} className={'profile'} title={'Profile'} />
+          <MenuLink path={'/dialogs'} className={'dialogs'} title={'Messages'} />
+          <MenuLink path={'/users'} className={'search'} title={'Search'} />
+        </ul>
+      </nav>
+    </aside >
   )
 }
 

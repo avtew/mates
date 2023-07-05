@@ -10,8 +10,8 @@ export const authAPI = {
   getAuth() {
     return instance.get(`auth/me`);
   },
-  login(email, password, rememberMe=false) {
-    return instance.post(`auth/login`, {email, password, rememberMe});
+  login(email, password, rememberMe = false) {
+    return instance.post(`auth/login`, { email, password, rememberMe });
   },
   logout() {
     return instance.delete(`auth/login`);
@@ -26,27 +26,36 @@ export const profileAPI = {
     return instance.get(`profile/status/${userId}`);
   },
   updateStatus(status) {
-    return instance.put('profile/status', {status: status});
+    return instance.put('profile/status', { status: status });
+  },
+  updateAvatar(file) {
+    const formData = new FormData();
+    formData.append('image', file);
+    return instance.put('profile/photo', formData, {
+      header: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+  },
+  updateProfile(profile) {
+    return instance.put('profile', profile);
   }
 }
 
 export const usersAPI = {
-  getUsers(currentPage = 1, pageSize = 10) {
-    return instance.get(`users?page=${currentPage}&count=${pageSize}`).then(response => { 
-      return response.data;
-    });
+  async getUsers(currentPage = 1, pageSize = 10) {
+    const response = await instance.get(`users?page=${currentPage}&count=${pageSize}`);
+    return response.data;
   },
 }
 
 export const followAPI = {
-  follow(id) {
-    return instance.post(`follow/${id}`).then(response => { 
-      return response.data;
-    })
+  async follow(id) {
+    const response = await instance.post(`follow/${id}`);
+    return response.data;
   },
-  unfollow(id) {
-    return instance.delete(`follow/${id}`).then(response => {
-      return response.data;
-    })
+  async unfollow(id) {
+    const response = await instance.delete(`follow/${id}`);
+    return response.data;
   },
 }

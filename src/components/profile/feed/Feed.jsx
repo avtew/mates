@@ -24,16 +24,16 @@ const Feed = (props) => {
     return <Preloader />
   }
 
-  let feed = props.feed.map(post => <Post id={post.id} photo={post.photo} name={props.name} time={post.time} text={post.text} />);
+  let feed = props.feed.map(post => <Post key={post.id} id={post.id} photo={props.profile.photos.small} name={props.name} time={post.time} text={post.text} />);
 
   let createPost = (values) => {
     props.addPost(values.newPostText);
   }
-
+  
   return (
     <div className={classes.feed}>
       <div className={classes.input}>
-        <AvatarSmall />
+        <AvatarSmall photo={props.profile.photos.small} />
         <div className={classes.content}>
           <PostReduxForm onSubmit={createPost} />
         </div>

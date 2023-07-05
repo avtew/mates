@@ -1,4 +1,9 @@
 @font-face {
+  font-family: 'Commissioner';
+  src:  url('./assets/fonts/Commissioner.ttf');
+}
+
+@font-face {
   font-family: 'icon';
   src:  url('./assets/fonts/icon.ttf');
   font-weight: normal;
@@ -12,16 +17,6 @@
   font-weight: normal;
   font-style: normal;
   font-display: block;
-}
-
-@font-face {
-  font-family: 'Commissioner';
-  src:  url('./assets/fonts/Commissioner.ttf');
-}
-
-@font-face {
-  font-family: 'Dongle';
-  src:  url('./assets/fonts/Dongle-Regular.ttf');
 }
 
 * {
@@ -38,7 +33,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #F6F6F6;
-  font-family: Commissioner;
+  font: 1rem Commissioner;
 }
 
 #root {
@@ -50,11 +45,48 @@ a {
   text-decoration: none;
 }
 
-.button:hover {
-  color: #ffffff;
-  background: #66cc66;
+.icon {
+  color: #66CC66;
+  font-family: 'icon' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
 }
 
-.button:hover:before {
-  color: #ffffff;
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.profile:before {
+  content: "\e905";
+}
+
+.dialogs:before {
+  content: "\e904";
+}
+
+.mates:before {
+  content: "\eba8";
+}
+
+.search:before {
+  content: "\e908";
+}
+
+.pencil:before {
+  content: "\e9a4";
+  margin-left: auto;
+}
+
+.cancel:before {
+  content: "\eca1";
+}
+
+.save:before {
+  content: "\ebe7";
 }

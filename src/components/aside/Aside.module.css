@@ -50,31 +50,3 @@
   width: 100%;
   padding: 10px; 
 }
-
-.icon {
-  color: #66CC66;
-  font-family: 'icon' !important;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.profile:before {
-  content: "\e905";
-}
-
-.dialogs:before {
-  content: "\e904";
-}
-
-.friends:before {
-  content: "\eba8";
-}
-
-.search:before {
-  content: "\e908";
-}

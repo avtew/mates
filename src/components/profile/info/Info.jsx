@@ -11,7 +11,7 @@ const Info = (props) => {
   }
   return (
     <div className={classes.info}>
-      <Avatar photo={props.profile.photos.large} />
+      <Avatar photo={props.profile.photos.large} userId={props.profile.userId} id={props.id} updateAvatar={props.updateAvatar} />
       <div className={classes.container}>
         <span className={classes.name}>{props.profile.fullName}</span>
         {props.id === props.profile.userId

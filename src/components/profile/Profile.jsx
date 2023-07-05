@@ -10,8 +10,8 @@ const Profile = (props) => {
   return (
     <div className={classes.profile}>
       <Cover />
-      <Info id={props.id} profile={props.profile.profile} status={props.status} updateStatus={props.updateStatus} />
-      <Details id={props.id} profile={props.profile.profile} />
+      <Info id={props.id} profile={props.profile.profile} status={props.status} updateStatus={props.updateStatus} updateAvatar={props.updateAvatar} />
+      <Details id={props.id} profile={props.profile.profile} updateProfile={props.updateProfile} />
       {/* <MateList id={props.id} profile={props.profile.profile} /> */}
       <Feed id={props.id} profile={props.profile.profile} feed={props.profile.feed} newPostText={props.profile.newPostText} addPost={props.addPost} inputUpdate={props.inputUpdate} name={props.name} />
     </div>

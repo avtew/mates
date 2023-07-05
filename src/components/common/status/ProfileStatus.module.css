@@ -34,6 +34,10 @@
   box-shadow: none;
 }
 
+.input {
+  width: 100%;
+}
+
 .text {
   margin: 0;
   font-size: 0.875rem;

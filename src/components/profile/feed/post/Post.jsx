@@ -3,9 +3,10 @@ import classes from './Post.module.css';
 import AvatarSmall from '../../../common/avatar/AvatarSmall';
 
 const Post = (props) => {
+  debugger
   return (
     <div className={classes.post}>
-      <AvatarSmall />
+      <AvatarSmall photo={props.photo} />
       <div className={classes.content}>
         <div className={classes.container}>
           <span className={classes.name}>{props.name}</span>

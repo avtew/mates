@@ -5,7 +5,7 @@ import classes from './UserList.module.css';
 
 
 let UserList = (props) => {
-  let users = props.users.map(user => <User id={user.id} photo={user.photos.large} name={user.name} city={user.city} status={user.status} followed={user.followed} follow={props.follow} unfollow={props.unfollow} withPhoto={props.withPhoto} />);
+  let users = props.users.map(user => <User key={user.id} id={user.id} photo={user.photos.large} name={user.name} city={user.city} status={user.status} followed={user.followed} follow={props.follow} unfollow={props.unfollow} withPhoto={props.withPhoto} users={props.users} />);
   return (
     <div className={classes.users}>
       <div className={classes.container}>

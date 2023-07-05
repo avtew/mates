@@ -1,6 +1,6 @@
 import React from "react";
-import classes from './AvatarSmall.module.css'
 import avatar from '../../../assets/img/avatar.png'
+import classes from './AvatarSmall.module.css'
 
 let AvatarSmall = (props) => {
   return (
