@@ -1,8 +1,9 @@
 import React, { Suspense, lazy } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { initializeApp } from './redux/appReduser';
+import { initializeAuth, initializeProfile } from './redux/appReduser';
 import { setCurrentPage } from './redux/usersReduser';
+import { getUserPhoto } from './redux/authReduser';
 import HeaderContainer from './components/header/HeaderContainer';
 import Aside from './components/aside/Aside';
 import ProfileContainer from './components/profile/ProfileContainer';
@@ -17,12 +18,19 @@ const Users = lazy(() => import('./components/users/Users'));
 // import Users from './components/users/Users';
 
 class App extends React.Component {
-  componentDidMount() {
-    this.props.initializeApp();
+  constructor(props) {
+    super(props);
+    this.props.initializeAuth();
+  }
+
+  componentDidUpdate() {
+    if (this.props.isAuth) {
+      this.props.initializeProfile(this.props.userId);
+    }
   }
 
   render() {
-    if (!this.props.isInitialized) {
+    if (!this.props.isInitialized && this.props.isAuth) {
       return <PreloaderLogo />
     }
 
@@ -56,4 +64,4 @@ let mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps, { initializeApp, setCurrentPage })(App);
+export default connect(mapStateToProps, { initializeAuth, initializeProfile, setCurrentPage, getUserPhoto })(App);

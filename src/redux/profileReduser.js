@@ -72,7 +72,7 @@ const profileReduser = (state = initialState, action) => {
     case SET_AVATAR:
       return {
         ...state,
-        profile: { ...state.profile, photos: action.photos }
+        profile: { ...state.profile, photos: action.photos },
       }
     default:
       return state;

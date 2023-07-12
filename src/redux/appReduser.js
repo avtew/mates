@@ -1,7 +1,7 @@
-import { getUserAuth } from "./authReduser";
+import { getUserAuth, getUserPhoto } from "./authReduser";
 
 let initialState = {
-  isInitialized: false
+  isInitialized: false,
 }
 
 const INITIALIZE = 'mates/appReduser/INITIALIZE';
@@ -18,18 +18,20 @@ const appReduser = (state = initialState, action) => {
   }
 }
 
-export const initialaze = () => {
+export const initialize = () => {
   return {
     type: INITIALIZE,
   }
 };
 
+export const initializeAuth = () => (dispatch) => {
+  dispatch(getUserAuth());
+}
 
-export const initializeApp = () => (dispatch) => {
-  let authPromise = dispatch(getUserAuth());
-  Promise.all([authPromise]).then(() => {
-    dispatch(initialaze());
-  });
+export const initializeProfile = (userId) => (dispatch) => {
+  dispatch(getUserPhoto(userId)).then(() => {
+    dispatch(initialize());
+  })
 }
 
 export default appReduser;

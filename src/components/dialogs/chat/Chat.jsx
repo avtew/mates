@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field, reduxForm, reset } from 'redux-form';
 import Message from './message/Message';
 import AvatarSmall from './../../common/avatar/AvatarSmall';
 import Preloader from './../../common/preloader/Preloader';
@@ -23,10 +23,11 @@ const Chat = (props) => {
 
   let chat = props.chat.map(message => <Message key={message.id} id={message.id} name={props.name} text={message.text} />);
 
-  let createMessage = (values) => {
+  let createMessage = (values, dispatch) => {
     props.addMessage(values.newMessageText);
+    dispatch(reset('messageForm'));
   }
-debugger
+
   return (
     <div className={classes.chat}>
       <div className={classes.container}>

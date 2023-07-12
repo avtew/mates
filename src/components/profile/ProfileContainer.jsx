@@ -37,6 +37,7 @@ let mapStateToProps = (state) => {
     name: state.auth.login,
     profile: state.profile,
     status: state.profile.status,
+    userPhoto: state.auth.userPhoto,
   }
 }
 

@@ -84,7 +84,7 @@ a {
 }
 
 .cancel:before {
-  content: "\eca1";
+  content: "\e9a0";
 }
 
 .save:before {
