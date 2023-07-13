@@ -47,6 +47,10 @@ export const usersAPI = {
     const response = await instance.get(`users?page=${currentPage}&count=${pageSize}`);
     return response.data;
   },
+  async getMates(currentPage = 1, pageSize = 10) {
+    const response = await instance.get(`users?page=${currentPage}&count=${pageSize}&friend=true`);
+    return response.data;
+  },
 }
 
 export const followAPI = {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getUsers, setCurrentPage, getNewUsers, followUser, unfollowUser,  } from '../../../redux/usersReduser';
+import { getUsers, setCurrentPage, getNewUsers, followUser, unfollowUser, } from '../../../redux/usersReduser';
 import UserList from './UserList';
 import { getCurrentPageSelector, getIsFetchingSelector, getPageSizeSelector, getUserQntSelector, getUsersSelector } from '../../../redux/usersSelectors';
 
@@ -13,6 +13,10 @@ class UserListContainer extends React.Component {
   pageDidChange = (page) => {
     this.props.setCurrentPage(page);
     this.props.getNewUsers(page, this.props.pageSize);
+  }
+
+  componentWillUnmount() {
+    this.props.setCurrentPage(1);
   }
 
   render() {

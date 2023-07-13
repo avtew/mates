@@ -1,5 +1,5 @@
 import React from "react";
-import classes from './ProfileStatus.module.css'
+import classes from './Status.module.css'
 
 let Status = (props) => {
   return (

@@ -11,6 +11,7 @@ import PreloaderLogo from './components/common/preloader/PreloaderLogo';
 import Preloader from './components/common/preloader/Preloader';
 import './App.css';
 const Login = lazy(() => import('./components/login/Login'));
+const Mates = lazy(() => import('./components/mates/Mates'));
 const Dialogs = lazy(() => import('./components/dialogs/Dialogs'));
 const Users = lazy(() => import('./components/users/Users'));
 // import Login from './components/login/Login';
@@ -45,6 +46,7 @@ class App extends React.Component {
               <Route path='/user' element={<Navigate to={`/user/${this.props.userId}`} />} />
               <Route path='/user/:userId' element={<ProfileContainer />} />
               <Route path='/login/*' element={<Login />} />
+              <Route path='/mates/*' element={<Mates />} />
               <Route path='/dialogs/*' element={<Dialogs />} />
               <Route path='/users/*' element={<Users />} />
             </Routes>

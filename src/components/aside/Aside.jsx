@@ -22,6 +22,7 @@ const Aside = (props) => {
       <nav className={classes.nav}>
         <ul className={classes.menu}>
           <MenuLink path={'/user'} className={'profile'} title={'Profile'} />
+          <MenuLink path={'/mates'} className={'mates'} title={'Mates'} />
           <MenuLink path={'/dialogs'} className={'dialogs'} title={'Messages'} />
           <MenuLink path={'/users'} className={'search'} title={'Search'} />
         </ul>

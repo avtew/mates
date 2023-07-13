@@ -1,0 +1,77 @@
+.status {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  max-width: 350px;
+  min-height: 40px;
+  padding: 10px 15px;
+  background: #ffffff;
+  word-break: break-all;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+}
+
+.status::before, .status::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  margin-top:-5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-width: 0 0 1px 1px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  transform: rotate(45deg);
+}
+
+.status::after {
+  z-index: 1;
+  box-shadow: none;
+}
+
+.input {
+  width: 100%;
+}
+
+.text {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.icon {
+  color: #66CC66;
+  font-family: 'icon' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+
+.pencil:before {
+  content: "\e9a4";
+}
+
+.save:before {
+  content: "\ebe7";
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.input {
+  font-family: Commissioner;
+  opacity: 75%;
+  border: none;
+  outline: none;
+}

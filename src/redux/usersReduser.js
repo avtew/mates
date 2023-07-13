@@ -92,12 +92,12 @@ const usersReduser = (state = initialState, action) => {
     case FOLLOW:
       return {
         ...state,
-        users: updateObject(state.users, action.userId, "id", {followed: true}),
+        users: updateObject(state.users, action.userId, "id", { followed: true }),
       }
     case UNFOLLOW:
       return {
         ...state,
-        users: updateObject(state.users, action.userId, "id", {followed: false}),
+        users: updateObject(state.users, action.userId, "id", { followed: false }),
       }
     default:
       return state;
@@ -119,6 +119,28 @@ export const getNewUsers = (page, pageSize) => {
   return (dispatch) => {
     dispatch(toggleIsFetching(true));
     usersAPI.getUsers(page, pageSize).then(response => {
+      dispatch(toggleIsFetching(false));
+      dispatch(setUserQnt(response.totalCount));
+      dispatch(setNewUsers(response.items));
+    })
+  }
+}
+
+export const getMates = (currentPage, pageSize) => {
+  return (dispatch) => {
+    dispatch(toggleIsFetching(true));
+    usersAPI.getMates(currentPage, pageSize).then(response => {
+      dispatch(toggleIsFetching(false));
+      dispatch(setUserQnt(response.totalCount));
+      dispatch(setUsers(response.items));
+    })
+  }
+}
+
+export const getNewMates = (currentPage, pageSize) => {
+  return (dispatch) => {
+    dispatch(toggleIsFetching(true));
+    usersAPI.getMates(currentPage, pageSize).then(response => {
       dispatch(toggleIsFetching(false));
       dispatch(setUserQnt(response.totalCount));
       dispatch(setNewUsers(response.items));
