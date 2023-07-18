@@ -1,0 +1,113 @@
+.input {
+  width: 220px;
+  height: 40px;
+  margin: 10px;
+  padding: 10px 20px 10px 40px;
+  font-family: Commissioner;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+.item {
+  position: relative;
+}
+
+.socialIcon {
+  color: #66CC66;
+  font-family: 'social-icons' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.web:before {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  content: "\e9ca";
+}
+
+.github:before {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  content: "\eab0";
+}
+
+.facebook:before {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  content: "\ea91";
+}
+
+.instagram:before {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  content: "\ea92";
+}
+
+.twitter:before {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  content: "\ea96";
+}
+
+.youtube:before {
+  position: absolute;
+  top: 22px;
+  left: 20px;
+  content: "\ea9d";
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  height: 40px;
+  margin: 10px;
+  font-family: Commissioner;
+  color: #66CC66;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+}
+
+.save:before {
+  content: "\ebe7";
+  font-family: 'icon' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #66cc66;
+  margin-right: 5px;
+}
+
+.button:hover {
+  color: #ffffff;
+  background: #66cc66;
+}
+
+.button:hover:before {
+  color: #ffffff;
+}

@@ -1,0 +1,64 @@
+.header {
+  position: relative;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 940px;
+  height: 40px;
+  margin: 10px auto;
+  padding: 0 20px;
+  font-size: 0.875rem;
+  background: #66CC66;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  margin-left: auto;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.link {
+  margin-left: 5px;
+  color: #ffffff;
+  line-height: 2;
+  cursor: pointer;
+}
+
+.icon {
+  color: #ffffff;
+  font-family: 'icon' !important;
+  font-size: 1rem;
+  line-height: 0.5;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.user:before {
+  content: "\e905";
+}
+
+.logout:before {
+  content: "\ece9";
+  cursor: pointer;
+}
+
+.profile:hover .user,
+.logout:hover {
+  transform: scale(1.1);
+}
+

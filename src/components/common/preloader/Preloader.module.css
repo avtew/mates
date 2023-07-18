@@ -1,0 +1,9 @@
+.preloader {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.img {
+  height: 10px;
+}

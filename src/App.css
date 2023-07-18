@@ -1,11 +1,25 @@
 .wrapper {
+  position: relative;
   display: grid;
   grid-template-areas:
-  "header header"
-  "aside main";
-  grid-template-rows: 40px 1fr;
-  grid-template-columns: 2fr 10fr;
-  width: 1200px;
+  "header header header"
+  "aside main friends";
+  grid-template-rows: 60px 1fr;
+  grid-template-columns: 180px 16fr 180px ;
+  width: 1320px;
+  height: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  width: 960px;
+  height: 100%;
+}
+
+.friends {
+  grid-area: friends;
+  width: 180px;
 }

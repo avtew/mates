@@ -1,0 +1,17 @@
+.contact {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid #F6F6F6;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 2;
+}
+
+.name {
+  font-variation-settings: "wght" 500;
+}

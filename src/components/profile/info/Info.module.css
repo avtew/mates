@@ -1,0 +1,18 @@
+.info {
+  grid-area: info;
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}

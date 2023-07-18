@@ -1,12 +1,92 @@
+@font-face {
+  font-family: 'Commissioner';
+  src:  url('./assets/fonts/Commissioner.ttf');
+}
+
+@font-face {
+  font-family: 'icon';
+  src:  url('./assets/fonts/icon.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'social-icons';
+  src:  url('./assets/fonts/social-icons.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
 * {
   box-sizing: border-box;
 }
 
+html {
+  height: 100vh;
+}
+
 body {
+  height: 100%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #F6F6F6;
+  font: 1rem Commissioner;
+}
+
+#root {
+  height: 100%;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.icon {
+  color: #66CC66;
+  font-family: 'icon' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.profile:before {
+  content: "\e905";
+}
+
+.dialogs:before {
+  content: "\e904";
+}
+
+.mates:before {
+  content: "\eba8";
+}
+
+.search:before {
+  content: "\e908";
+}
+
+.pencil:before {
+  content: "\e9a4";
+  margin-left: auto;
+}
+
+.cancel:before {
+  content: "\e9a0";
+}
+
+.save:before {
+  content: "\ebe7";
 }

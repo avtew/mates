@@ -1,0 +1,52 @@
+.aside {
+  position: relative;
+  grid-area: aside;
+  width: 180px;
+  padding: 10px;
+}
+
+.nav {
+  position: sticky;
+  top: 70px;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0;
+  font-size: 0.875rem;
+  font-variation-settings: "wght" 450;
+  list-style: none;
+}
+
+.item:hover {
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.item:hover .icon {
+  color: #66CC66;
+  transform: scale(1.2);
+}
+
+.item:hover span {
+  color: #66CC66;
+}
+
+.item a {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+.link {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 10px; 
+}

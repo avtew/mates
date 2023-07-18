@@ -1,0 +1,10 @@
+.dialogs {
+  display: grid;
+  grid-template-areas:
+  "list chat";
+  grid-template-columns: 5fr 10fr;
+  gap: 60px;
+  width: 100%;
+  padding: 10px 0 20px 0;
+  font-size: 0.85rem;
+}

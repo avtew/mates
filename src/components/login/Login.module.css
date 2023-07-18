@@ -1,0 +1,142 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 660px;
+}
+
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin: 10px;
+  padding: 60px 0;
+}
+
+.title {
+  margin: 10px;
+  text-align: center;
+}
+
+.logo {
+  margin: 10px;
+  margin-bottom: 60px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 420px;
+  margin: 10px;
+  padding: 60px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+/* .img {
+  margin-top: auto;
+} */
+
+.checkbox {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  font-size: 0.875rem;
+}
+
+.check {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 2px;
+  background: #ffffff;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  appearance: none
+}
+
+.check:hover {
+  background: rgba(102, 204, 102, 0.5);
+}
+
+.check:checked {
+  background: #66cc66;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 40px;
+  margin: 10px;
+  font-family: Commissioner;
+  color: #ffffff;
+  background: #66cc66;
+  border-radius: 10px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  border: none;
+  cursor: pointer;
+}
+
+.log:before {
+  content: "\ede8";
+  font-family: 'icon' !important;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
+  margin-right: 15px;
+  transition: 0.25s;
+}
+
+.button:hover:before {
+  margin-right: 5px;
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 15px;
+  width: 280px;
+  margin-top: auto;
+  margin-bottom: 17px;
+  padding: 10px 15px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+}
+
+.content::before, .content::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 100%;
+  margin-top:-5px;
+  left: 33%;
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-width: 0 0 1px 1px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  transform: rotate(45deg);
+}
+
+.content::after {
+  z-index: 1;
+  box-shadow: none;
+}
