@@ -30,8 +30,8 @@ const LoginForm = (props) => {
           You can log in using <br></br>
           the test account data:<br></br>
           <br></br>
-          free@samuraijs.com<br></br>
-          free
+          deschain@uf.edu.pl<br></br>
+          password
         </div>
       }
       <img src={formImg} className={classes.img} alt='By rawpixel.com on Freepik' />
