@@ -4,7 +4,7 @@ The SPA project developed with React/Redux and using third-party back-end and AP
 
 **Features:**
 
-- authentication to the server;
+- authentification to the server;
 
 - profile page
 
