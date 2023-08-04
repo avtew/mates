@@ -25,8 +25,7 @@ const LoginForm = (props) => {
         ? <div className={classes.content}>
             {props.error}
           </div>
-        : 
-        <div className={classes.content}>
+        : <div className={classes.content}>
           You can log in using <br></br>
           the test account data:<br></br>
           <br></br>

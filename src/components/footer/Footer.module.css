@@ -1,0 +1,19 @@
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 60px;
+  font-size: 0.75rem;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.link {
+  color: #66CC66;
+}

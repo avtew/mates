@@ -3,8 +3,9 @@
   display: grid;
   grid-template-areas:
   "header header header"
-  "aside main friends";
-  grid-template-rows: 60px 1fr;
+  "aside main friends"
+  "aside footer friends";
+  grid-template-rows: 60px auto 60px;
   grid-template-columns: 180px 16fr 180px ;
   width: 1320px;
   height: 100%;
