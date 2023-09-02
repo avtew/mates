@@ -5,22 +5,22 @@ The SPA project developed with React/Redux and using third-party back-end and AP
 https://avtew.github.io/mates/
 
 ## Features:
-- authentification to the server
-- profile page
+- Authentification to the server
+- Profile page
   - data update (photo, info, status)
   - feed, post publishing
-- users page
+- Users page
   - follow/unfollow users
-- friends list
+- Friends list
 
 ## Technologies
 - React
 - Redux
 - JavaScript
 - HTML and CSS (flexbox, grid, modules)
-- redux-form library for management and validation forms
-- axios library for async requests to the server
+- Redux-form library for management and validation forms
+- Axios library for async requests to the server
 
 ## Roles
 - UI design
-- front-end development
+- Front-end development
